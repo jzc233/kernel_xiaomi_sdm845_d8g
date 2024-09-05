@@ -22,6 +22,9 @@
 #include <net/netlink.h>
 #include <net/genetlink.h>
 #include <linux/suspend.h>
+#ifdef CONFIG_D8G_SERVICE
+#include <misc/d8g_helper.h>
+#endif
 
 #define CREATE_TRACE_POINTS
 #include <trace/events/thermal.h>
@@ -53,7 +56,12 @@ static struct thermal_governor *def_governor;
 
 static struct workqueue_struct *thermal_passive_wq;
 
+static struct device thermal_message_dev;
+#ifdef CONFIG_D8G_SERVICE
+atomic_t __read_mostly switch_mode = ATOMIC_INIT(-1);
+#else
 static atomic_t switch_mode = ATOMIC_INIT(-1);
+#endif
 static atomic_t temp_state = ATOMIC_INIT(0);
 static char boost_buf[128];
 
