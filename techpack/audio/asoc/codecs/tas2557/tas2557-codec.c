@@ -45,7 +45,7 @@
 
 #include "tas2557-core.h"
 #include "tas2557-codec.h"
-#include "../../../../xiaomi-sdm845/mfd/spk-id.h"
+#include "../../../../mi845/mfd/spk-id.h"
 
 #define KCONTROL_CODEC
 

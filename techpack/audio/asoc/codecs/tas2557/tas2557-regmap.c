@@ -48,7 +48,7 @@
 #ifdef ENABLE_TILOAD
 #include "tiload.h"
 #endif
-#include "../../../../xiaomi-sdm845/mfd/spk-id.h"
+#include "../../../../mi845/mfd/spk-id.h"
 
 #define LOW_TEMPERATURE_GAIN 6
 #define LOW_TEMPERATURE_COUNTER 12
