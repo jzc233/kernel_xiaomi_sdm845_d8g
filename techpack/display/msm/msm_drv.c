@@ -581,7 +581,7 @@ static int msm_drm_display_thread_create(struct msm_drm_private *priv, struct dr
 #ifdef CONFIG_ARCH_KONA
 			kthread_run_perf_critical(cpu_prime_mask,
 #else
-			kthread_run_perf_critical(cpu_perf_mask,
+			kthread_run_perf_critical(
 #endif
 				kthread_worker_fn,
 				&priv->disp_thread[i].worker,
@@ -604,7 +604,7 @@ static int msm_drm_display_thread_create(struct msm_drm_private *priv, struct dr
 #ifdef CONFIG_ARCH_KONA
 			kthread_run_perf_critical(cpu_prime_mask,
 #else
-			kthread_run_perf_critical(cpu_perf_mask,
+			kthread_run_perf_critical(
 #endif
 				kthread_worker_fn,
 				&priv->event_thread[i].worker,
@@ -655,7 +655,7 @@ static int msm_drm_display_thread_create(struct msm_drm_private *priv, struct dr
 #ifdef CONFIG_ARCH_KONA
 	priv->pp_event_thread = kthread_run_perf_critical(cpu_prime_mask,
 #else
-	priv->pp_event_thread = kthread_run_perf_critical(cpu_perf_mask,
+	priv->pp_event_thread = kthread_run_perf_critical(
 #endif
 			kthread_worker_fn, &priv->pp_event_worker, "pp_event");
 
