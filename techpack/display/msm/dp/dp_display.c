@@ -1268,7 +1268,7 @@ static void dp_display_disconnect_sync(struct dp_display_private *dp)
 static int dp_display_usbpd_disconnect_cb(struct device *dev)
 {
 	int rc = 0;
-	struct dp_display_private *dp;
+	struct dp_display_private *dp = NULL;
 
 	if (!dev) {
 		DP_ERR("invalid dev\n");

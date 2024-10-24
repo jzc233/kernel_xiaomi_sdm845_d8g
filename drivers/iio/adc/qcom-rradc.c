@@ -810,7 +810,7 @@ static int rradc_check_status_ready_with_retry(struct rradc_chip *chip,
 	}
 
 	if ((retry_cnt >= FG_RR_CONV_MAX_RETRY_CNT) &&
-		((prop->channel != RR_ADC_DCIN_V) ||
+		((prop->channel != RR_ADC_DCIN_V) &&
 		(prop->channel != RR_ADC_DCIN_I)) &&
 		chip->rradc_fg_reset_wa) {
 		pr_err("rradc is hung, Proceed to recovery\n");

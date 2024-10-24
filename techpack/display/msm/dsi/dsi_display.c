@@ -1618,7 +1618,7 @@ static ssize_t debugfs_alter_esd_check_mode(struct file *file,
 	struct drm_panel_esd_config *esd_config;
 	char *buf;
 	int rc = 0;
-	size_t len;
+	size_t len = 0;
 
 	if (!display)
 		return -ENODEV;

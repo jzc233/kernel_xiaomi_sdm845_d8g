@@ -2689,7 +2689,7 @@ static int dsi_panel_parse_fod_dim_lut(struct dsi_panel *panel,
 	u32 *array;
 	int count;
 	int len;
-	int rc;
+	int rc = 0;
 	int i;
 
 	len = utils->count_u32_elems(utils->data, "mi,mdss-dsi-dimlayer-brightness-alpha-lut");
@@ -5192,7 +5192,7 @@ int dsi_panel_disable(struct dsi_panel *panel)
 	struct dsi_display_mode_priv_info *priv_info;
 	struct dsi_cmd_desc *cmds = NULL;
 	u32 count;
-	u8 *tx_buf;
+	u8 *tx_buf = NULL;
 
 	if (!panel) {
 		DSI_ERR("invalid params\n");

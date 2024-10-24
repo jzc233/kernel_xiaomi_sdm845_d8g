@@ -3448,7 +3448,7 @@ void adm_copp_mfc_cfg(int port_id, int copp_idx, int dst_sample_rate)
 	struct audproc_mfc_param_media_fmt mfc_cfg;
 	struct adm_cmd_device_open_v5 open;
 	struct param_hdr_v3 param_hdr;
-	int port_idx;
+	int port_idx = 0;
 	int rc  = 0;
 	int i  = 0;
 
